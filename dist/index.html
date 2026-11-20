@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ede2d8">
+  <meta name="description" content="Stefany Atehortua Rivera. Desarrollo web, gestión de datos y soporte técnico, con formación en Sistemas Teleinformáticos y un enfoque práctico y organizado.">
+  <title>Stefany Atehortua Rivera · Portafolio</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/anton.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="content.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <div class="portfolio-paper" id="inicio">
+    <header class="site-header">
+      <a class="mini-signature" href="#inicio" aria-label="Volver al inicio" data-name>Tu nombre</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span>Menú</span><i aria-hidden="true"></i></button>
+      <nav id="main-nav" aria-label="Navegación principal">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#habilidades">Conocimientos</a>
+        <a href="#proyectos">Mi trabajo</a>
+        <a href="#formacion">Formación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+    <main id="contenido">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-topline"><span class="signature hero-signature" data-name>Tu nombre</span><span class="hero-discipline">ANÁLISIS &amp;<br>DESARROLLO</span></div>
+        <h1 id="hero-title" class="hero-title" aria-label="Portafolio"><span>PORTA</span><span>FOLIO</span></h1>
+        <div class="hero-bottom"><div class="hero-intro"><p data-discipline>Desarrolladora de software</p><span data-tagline>Interfaces funcionales. Datos organizados. Soluciones prácticas.</span></div><a class="explore-link" href="#proyectos"><span>Explorar proyectos</span><span class="round-symbol" aria-hidden="true">✳</span></a></div>
+      </section>
+
+      <div class="editorial-grid">
+        <section class="panel about-panel reveal" id="sobre-mi" aria-labelledby="about-title">
+          <div class="about-copy"><h2 id="about-title">QUIÉN SOY</h2><p class="about-name" data-full-name>Stefany Atehortua Rivera</p><p data-bio>Desarrollo web, gestión de datos y soporte técnico con un enfoque práctico y organizado.</p><p class="education" data-education>Formación en Sistemas Teleinformáticos · SENA.</p><p class="signature personal-note" data-note>Pensamiento lógico. Atención al detalle.</p></div>
+          <figure class="polaroid" data-portrait><div class="polaroid-photo portrait-placeholder"><span class="photo-cross" aria-hidden="true">+</span><span class="signature">Fotografía de perfil</span></div></figure>
+        </section>
+
+        <section class="panel skills-panel reveal" id="habilidades" aria-labelledby="skills-title">
+          <div class="skills-content"><h2 id="skills-title">MI CAJA DE<br>HERRAMIENTAS</h2><div class="skills-list" id="skills-list"></div><span class="small-note">Conocimientos por completar</span></div>
+          <figure class="desk-photo"><img src="assets/workspace.webp" alt="Composición editorial de un escritorio con cuaderno, café y portátil" width="1536" height="1024" loading="lazy"><figcaption class="signature">Pensar.<br>Probar.<br>Crear.<span aria-hidden="true">♡</span></figcaption></figure>
+        </section>
+
+        <section class="panel projects-panel reveal" id="proyectos" aria-labelledby="projects-title">
+          <div class="section-heading"><h2 id="projects-title">CONOCE ALGUNOS DE MIS PROYECTOS</h2><span class="signature">Desarrollos que conectan ideas y soluciones.</span></div>
+          <div class="project-gallery" id="project-gallery"></div>
+          <div class="project-footnote"><span>DESARROLLO · TECNOLOGÍA · SOLUCIONES</span><span class="signature" aria-hidden="true">Del concepto a la implementación.</span></div>
+        </section>
+
+        <section class="panel education-panel reveal" id="formacion" aria-labelledby="education-title"><div class="section-heading"><h2 id="education-title">MI FORMACIÓN</h2><span class="signature">Conocimientos que respaldan mi trabajo.</span></div><div id="education-timeline" class="education-timeline"></div><div class="language-band"><span class="signature">Idiomas</span><div id="language-list"></div></div></section>
+
+        <section class="panel services-panel reveal" aria-labelledby="services-title"><div class="section-heading"><h2 id="services-title">¿CÓMO PUEDO APORTAR?</h2><span class="signature">Tecnología aplicada a tus necesidades.</span></div><div id="services-list" class="services-list"></div><a href="#contacto" class="service-contact">Conversemos sobre tu proyecto <span aria-hidden="true">✳</span></a></section>
+      </div>
+
+      <section class="contact-panel reveal" id="contacto" aria-labelledby="contact-title"><span class="signature contact-overline">Conversemos sobre tu próximo proyecto.</span><h2 id="contact-title">CREEMOS<br><span>SOLUCIONES.</span></h2><div class="contact-bottom"><div><p class="contact-invitation">Cuéntame qué necesitas y exploremos cómo puedo aportar.</p><div id="contact-links"></div><p class="contact-location" data-location></p></div><a class="back-top" href="#inicio"><span class="signature">Volver al inicio</span><span aria-hidden="true">✳</span></a></div><div class="footer-line"><span data-footer-name>Stefany Atehortua Rivera · Portafolio personal</span><span>DESARROLLO CON PROPÓSITO</span></div></section>
+    </main>
+  </div>
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-paper"><button class="dialog-close" type="button" aria-label="Cerrar proyecto">Cerrar <span aria-hidden="true">×</span></button><span class="signature dialog-overline">Detalle del proyecto</span><h2 id="dialog-title"></h2><div id="dialog-body"></div></div></dialog>
+  <script>document.documentElement.classList.add('has-js');</script>
+</body>
+</html>
