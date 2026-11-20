@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ede2d8">
+  <meta name="description" content="Fundamentos técnicos del portafolio de Stefany: arquitectura, navegación, accesibilidad, rendimiento, SEO y publicación.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <!-- SEO_GENERADO -->
+  <title>Fundamentos del portafolio · Stefany Atehortua Rivera</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#fundamentos">Saltar al contenido</a>
+  <div class="portfolio-paper">
+    <header class="site-header"><a class="mini-signature" href="index.html">STEFANY</a><a href="index.html#proceso">Volver al portafolio</a></header>
+    <main class="tech-page" id="fundamentos">
+      <span class="signature contact-overline">El diseño también tiene una estructura.</span>
+      <h1>DETRÁS DE<br>ESTE PORTAFOLIO</h1>
+      <p class="tech-lead">Una experiencia personal construida con HTML, CSS y JavaScript. Estas son las decisiones que conectan su identidad visual con una navegación clara y una publicación mantenible.</p>
+      <div class="architecture-flow" aria-label="Arquitectura de publicación">
+        <div><strong>Contenido</strong><p>Datos editables y plantillas separados del diseño y las interacciones.</p></div>
+        <div><strong>Construcción</strong><p>Node.js genera páginas HTML con el contenido completo y comprueba los recursos.</p></div>
+        <div><strong>Experiencia</strong><p>El navegador recibe archivos estáticos. JavaScript añade menú, transiciones y detalles.</p></div>
+      </div>
+      <h2>LAS DECISIONES TÉCNICAS</h2>
+      <details open><summary>Estructura, enlaces y multimedia</summary><p>HTML semántico organiza portada, perfil, habilidades, proyectos, formación, proceso y contacto. Los enlaces internos permiten llegar a cada sección; una segunda página explica el proyecto. La fotografía real aparece en el perfil y Amor y Paz se presenta como video con controles y subtítulos descriptivos, sin enlace al e-commerce.</p></details>
+      <details><summary>Arquitectura estática y contenido actualizado</summary><p>Este sitio usa generación estática: el contenido se convierte en HTML antes de publicarlo. Así se puede leer incluso con JavaScript desactivado. Los cambios se realizan en content.js y en las plantillas, se verifican y generan una nueva versión. Las interacciones en el navegador no implican que exista un backend.</p></details>
+      <details><summary>Personas, objetivos y proceso</summary><p>El objetivo es presentar el perfil de Stefany ante empresas, clientes y aliados. La navegación prioriza quién es, qué conocimientos tiene, su formación y una muestra de trabajo. El proceso conecta objetivos, investigación de referencias, estructura visual, contenido, desarrollo y pruebas.</p></details>
+      <details><summary>Adaptabilidad, usabilidad y accesibilidad</summary><p>La composición se reorganiza en pantallas pequeñas, mantiene navegación táctil y funciona con teclado. Incluye un enlace para saltar al contenido, foco visible, textos alternativos y subtítulos. Las animaciones respetan la preferencia de movimiento reducido. Las comprobaciones realizadas se registran en la documentación; no se afirma una certificación de accesibilidad.</p></details>
+      <details><summary>Rendimiento y recursos</summary><p>Las imágenes WebP y las fuentes WOFF2 son locales. Las fotografías fuera de la portada usan carga diferida. El video carga inicialmente sus metadatos y se reproduce cuando la persona lo decide. El sitio evita bibliotecas externas y no necesita descargar un framework para mostrar su contenido.</p></details>
+      <details><summary>SEO y descubrimiento</summary><p>Cada página tiene título, descripción, jerarquía de encabezados y contenido visible en el HTML. Al configurar la URL pública, la construcción genera direcciones canónicas, metadatos sociales, datos estructurados de la autora, robots.txt y sitemap.xml. Esto facilita que los buscadores interpreten el sitio; no garantiza una posición ni la indexación.</p></details>
+      <details><summary>Hosting, dominio y publicación</summary><p>GitHub guarda el código y su historial. El flujo de GitHub Actions verifica el proyecto y publica únicamente dist en GitHub Pages mediante HTTPS. La dirección definitiva se configura al activar Pages. Un dominio propio es opcional. Hosting compartido, VPS y servidor dedicado se comparan en la documentación como alternativas para necesidades diferentes.</p></details>
+      <details><summary>CMS, bases de datos y colaboración</summary><p>Un CMS permite editar contenido mediante un panel y una base de datos gestiona información persistente. Este portafolio no los necesita para su alcance actual: el contenido se mantiene en archivos y los cambios se versionan con Git. Una web colaborativa o con cuentas de usuario requeriría otra arquitectura, permisos y almacenamiento en el servidor.</p></details>
+      <details><summary>Contacto, comercio y ecosistema digital</summary><p>El correo, el teléfono y los perfiles profesionales conectan la web con otros canales. El video de Amor y Paz muestra un prototipo de catálogo y carrito; no procesa pagos. La estrategia puede evolucionar con contenido útil y difusión en redes. Un CRM, un chat o una tienda operativa serían ampliaciones específicas, no funciones ya implementadas.</p></details>
+      <details><summary>Medición, mantenimiento y mejora</summary><p>El plan de mejora contempla revisar enlaces de contacto, reproducciones del video y navegación móvil. No hay rastreadores, cookies analíticas ni cifras de visitas inventadas. Una futura integración de analítica requeriría seleccionar una herramienta, configurar la cuenta y definir el tratamiento de datos. Git, las pruebas y las copias del código permiten mantener y recuperar versiones.</p></details>
+      <div class="technical-note"><p><strong>Alcance real:</strong> portafolio estático con interacción en el navegador, generación de HTML, SEO configurable y publicación preparada. No incluye servidor de aplicación, base de datos, CMS, pagos ni analítica externa.</p></div>
+      <h2>PARA EXPLORAR EL PROYECTO</h2>
+      <p>El código incluye una memoria de arquitectura, la relación de los temas de la presentación con esta solución, instrucciones de publicación y un registro de verificación.</p>
+      <div class="contact-links"><a href="index.html">Volver al inicio</a><a href="index.html#proyectos">Ver proyectos</a><a href="mailto:atehortuastefany01@gmail.com">Conversar sobre una idea</a></div>
+    </main>
+  </div>
+</body>
+</html>
