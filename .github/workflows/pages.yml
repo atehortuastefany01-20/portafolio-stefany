@@ -43,7 +43,13 @@ jobs:
           SITE_URL: ${{ steps.pages.outputs.base_url }}
       - run: node scripts/check.mjs
       - uses: actions/upload-pages-artifact@v5
+        id: artifact
         with:
           path: dist
-      - uses: actions/deploy-pages@v5
+      - name: Publicar el paquete verificado
+        run: node scripts/publish-pages.mjs
         id: deployment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ARTIFACT_ID: ${{ steps.artifact.outputs.artifact_id }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
