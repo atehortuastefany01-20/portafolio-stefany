@@ -7,11 +7,12 @@ export const root=fileURLToPath(new URL('../',import.meta.url));
 export async function buildSite({output=path.join(root,'dist'),siteUrl}={}) {
   const context={window:{}};
   vm.runInNewContext(await readFile(path.join(root,'dist/content.js'),'utf8'),context);
+  vm.runInNewContext(await readFile(path.join(root,'dist/banners.js'),'utf8'),context);
   const data=context.window.PORTFOLIO;
   const config=JSON.parse(await readFile(path.join(root,'site.config.json'),'utf8'));
   const base=publicBase(siteUrl??process.env.SITE_URL??config.publicUrl);
   await mkdir(output,{recursive:true});
-  let html=renderPortfolio(await readFile(path.join(root,'templates/index.html'),'utf8'),data);
+  let html=renderPortfolio(await readFile(path.join(root,'templates/index.html'),'utf8'),data,context.window.PortfolioBanners.render(data.marketingBanners));
   html=html.replace('<!-- SEO_GENERADO -->',seo(data,config.description,base));
   // El título y descripción social se emiten una sola vez, con la URL real al publicar.
   html=html.replace(/  <meta property="og:(title|description)"[^>]+>\r?\n/g,'');

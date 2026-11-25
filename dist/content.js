@@ -41,6 +41,7 @@ window.PORTFOLIO = {
   projects: [
     {
       title: 'Amor y Paz',
+      url: 'https://atehortuastefany01-20.github.io/amor-y-paz-landing/',
       kind: 'E-commerce · Prototipo frontend',
       summary: 'Recorrido por el catálogo, la búsqueda, las opciones de producto y el carrito de una tienda de moda.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
@@ -49,6 +50,9 @@ window.PORTFOLIO = {
       captions: 'assets/amor-y-paz.vtt',
     },
   ],
+  /* Banners reales de marketing. Añade image, alt y, opcionalmente, title.
+     El segundo espacio de proyectos se convierte en carrusel al añadir imágenes. */
+  marketingBanners: [],
   services: [
     'Desarrollo web con HTML, CSS y React',
     'Bases de datos SQL, MySQL y MongoDB',

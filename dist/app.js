@@ -66,19 +66,23 @@
 
   const realProjects = Array.isArray(data.projects) ? data.projects.filter(p => p && p.title).slice(0, 2) : [];
   const projects = [...realProjects];
+  if (projects.length < 2 && window.PortfolioBanners?.validItems(data.marketingBanners).length) projects.push({ banners: true });
   while (projects.length < 2) projects.push({ title: 'Proyecto por publicar', placeholder: true });
   if (realProjects.length) $('#project-gallery').classList.add('has-real-projects');
   $('#project-gallery').innerHTML = projects.map((project, index) => {
+    if (project.banners) return window.PortfolioBanners.render(data.marketingBanners);
     const src = safeImage(project.image);
     const video = safeImage(project.video);
     const captions = safeImage(project.captions);
     if (video) {
       const technology = Array.isArray(project.technologies) ? project.technologies.filter(Boolean).join(' · ') : '';
-      return `<article class="project-item project-item--video"><div class="project-image"><video controls playsinline preload="metadata"${src ? ` poster="${escape(src)}"` : ''} aria-label="Video del proyecto ${escape(project.title)}"><source src="${escape(video)}" type="video/mp4">${captions ? `<track kind="captions" src="${escape(captions)}" srclang="es" label="Español" default>` : ''}Tu navegador no puede reproducir este video.</video></div><h3>${escape(project.title)}</h3><p>${escape(project.kind || '')}</p><p>${escape(project.summary || '')}</p>${technology ? `<p class="project-technologies">${escape(technology)}</p>` : ''}</article>`;
+      const liveUrl = safeLink(project.url);
+      return `<article class="project-item project-item--video"><div class="project-image"><video controls playsinline preload="metadata"${src ? ` poster="${escape(src)}"` : ''} aria-label="Video del proyecto ${escape(project.title)}"><source src="${escape(video)}" type="video/mp4">${captions ? `<track kind="captions" src="${escape(captions)}" srclang="es" label="Español" default>` : ''}Tu navegador no puede reproducir este video.</video></div><h3>${escape(project.title)}</h3><p>${escape(project.kind || '')}</p><p>${escape(project.summary || '')}</p>${technology ? `<p class="project-technologies">${escape(technology)}</p>` : ''}${liveUrl ? `<div class="project-live-link">${external(liveUrl, 'Visitar Amor y Paz')}</div>` : ''}</article>`;
     }
     const image = src ? `<img src="${escape(src)}" alt="Captura de ${escape(project.title)}" loading="lazy">` : `<span class="project-placeholder">${pictureIcon}<span class="signature">Vista del proyecto</span></span>`;
     return `<button class="project-item" type="button" data-open-project="${index}" aria-label="${escape(project.placeholder ? 'Explorar espacio de proyecto' : `Explorar ${project.title}`)}"><span class="project-image">${image}<span class="project-hover">${project.placeholder ? 'Ver espacio del proyecto' : 'Ver proyecto'}</span></span><h3>${escape(project.title)}</h3><p>${escape(project.kind || (project.placeholder ? 'Descripción, tecnologías y alcance.' : 'Explorar el caso de trabajo.'))}</p></button>`;
   }).join('');
+  $$('.banner-carousel').forEach(host => window.PortfolioBanners?.mount(host));
   const services = Array.isArray(data.services) ? data.services.filter(Boolean) : [];
   $('#services-list').innerHTML = services.length ? services.map(item => `<p class="service-row">${escape(item)}</p>`).join('') : '<p class="service-empty">Un espacio para las soluciones que puedes ofrecer.<span class="signature">Tus servicios, por añadir. ♡</span></p>';
   const contacts = [];

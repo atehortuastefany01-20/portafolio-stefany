@@ -20,7 +20,7 @@ for (const name of ['anton', 'dm-sans']) {
 const context = { window: {} };
 vm.runInNewContext(await readFile(path.join(root, 'content.js'), 'utf8'), context);
 if (!context.window.PORTFOLIO) throw new Error('Missing editable content');
-const dynamicImages = [context.window.PORTFOLIO.portrait, context.window.PORTFOLIO.heroPortrait, ...(context.window.PORTFOLIO.projects || []).map(item => item.image)].filter(value => value && !/^https?:/.test(value));
+const dynamicImages = [context.window.PORTFOLIO.portrait, context.window.PORTFOLIO.heroPortrait, ...(context.window.PORTFOLIO.projects || []).map(item => item.image), ...(context.window.PORTFOLIO.marketingBanners || []).map(item => item.image)].filter(value => value && !/^https?:/.test(value));
 for (const asset of dynamicImages) await access(path.join(root, asset));
 const mediaAssets = (context.window.PORTFOLIO.projects || []).flatMap(item => [item.video, item.captions]).filter(Boolean);
 for (const asset of mediaAssets) await access(path.join(root, asset));

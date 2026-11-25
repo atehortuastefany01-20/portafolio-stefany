@@ -338,3 +338,25 @@ main{min-width:0}body{overflow-wrap:break-word}
 .tech-page .contact-links a{display:inline-flex;align-items:center;min-height:44px}
 @media(min-width:821px){.process-flow{grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}.architecture-flow{grid-template-columns:repeat(3,minmax(0,1fr))}.process-flow h3{font-size:32px}}
 @media(prefers-reduced-motion:reduce){.process-panel{scroll-behavior:auto}}
+
+/* Galería de trabajos de marketing */
+.project-live-link{margin-top:18px}
+.project-live-link a{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-size:15px;font-weight:600;text-decoration:none;transition:background .3s,transform .3s}
+.project-live-link a:hover{background:var(--berry);transform:translateY(-2px)}
+.project-item--banners{align-self:start}
+.banner-carousel{min-width:0;background:var(--paper);border:1px solid var(--line);box-shadow:0 3px 12px #49382e15}
+.banner-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;min-width:0;background:#eee3d8}
+.banner-track:focus-visible{outline:3px solid var(--berry);outline-offset:-3px}
+.banner-slide{flex:0 0 100%;min-width:0;position:relative;scroll-snap-align:start;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;padding:12px}
+.banner-slide img{width:100%;height:100%;object-fit:contain;transform:none!important}
+.banner-slide figcaption{position:absolute;bottom:14px;left:14px;right:14px;background:#f5eee5eb;padding:8px 12px;font-size:14px;line-height:1.4;color:var(--ink)}
+.is-enhanced .banner-track{display:grid;overflow:hidden}
+.is-enhanced .banner-slide{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .8s ease,transform .9s var(--ease),visibility .8s}
+.is-enhanced .banner-slide.is-active{opacity:1;visibility:visible;transform:none}
+.banner-controls{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px;padding:10px;border-top:1px solid var(--line)}
+.banner-controls button{border:1px solid var(--line);background:transparent;min-height:44px;padding:8px 11px;font-size:14px;font-weight:600;transition:background .25s,color .25s}
+.banner-controls button:hover{background:var(--ink);color:var(--paper)}
+.banner-counter{font-size:14px;min-width:38px;text-align:center;font-variant-numeric:tabular-nums}
+.banner-controls [data-banner-toggle]{margin-left:4px;color:var(--berry)}
+.banner-controls [data-banner-toggle]:hover{color:var(--paper)}
+@media(prefers-reduced-motion:reduce){.is-enhanced .banner-slide{transition:none;transform:none}.project-live-link a{transition:none;transform:none}}

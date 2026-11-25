@@ -20,6 +20,8 @@ test('SEO de producción y cuatro estudios legibles sin JavaScript',async()=>{
   const html=await readFile(path.join(output,'index.html'),'utf8');
   for(const value of ['Tecnología en Análisis y Desarrollo de Software','En curso','Técnico en Sistemas Teleinformáticos','Curso en Marketing Digital','Bachiller académico','IED Manuel Cepeda Vargas','Amor y Paz','atehortuastefany01@gmail.com','Mi enfoque combina'])assert.ok(html.includes(value),value);
   assert.equal((html.match(/class="education-item"/g)||[]).length,4);
+  assert.ok(html.includes('href="https://atehortuastefany01-20.github.io/amor-y-paz-landing/"'));
+  assert.ok(html.includes('Visitar Amor y Paz'));
   assert.ok(!/\bT\.?I\.?\s*\d{6,}/i.test(html));
   assert.ok(!/Nivel A1|mucho gusto/i.test(html));
   assert.ok(!html.match(/<section class="hero"[\s\S]*?<\/section>/)[0].includes('<img'));

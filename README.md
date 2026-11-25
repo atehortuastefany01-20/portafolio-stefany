@@ -1,6 +1,12 @@
 # Portafolio Stefany · Versión con fundamentos técnicos
 
-Código independiente del portafolio anterior. Conserva la portada sin fotografía, la misma identidad editorial, el perfil con foto real, habilidades, servicios, contactos y dos espacios de proyectos. Amor y Paz se muestra únicamente como video. La formación incluye los cuatro estudios de la hoja de vida, con el tecnólogo identificado como «En curso».
+Código independiente del portafolio anterior. Conserva la portada sin fotografía, la misma identidad editorial, el perfil con foto real, habilidades, servicios, contactos y dos espacios de proyectos. Amor y Paz se presenta en video y tiene acceso a su página publicada. La formación incluye los cuatro estudios de la hoja de vida, con el tecnólogo identificado como «En curso».
+
+## Banners de marketing
+
+El segundo espacio de proyectos admite un carrusel de banners reales. Guarda las imágenes en `dist/assets/` y añádelas a `marketingBanners` en `dist/content.js`, con `image`, `alt` y un `title` opcional. Al construir, las imágenes se incluyen en HTML y el navegador añade transiciones automáticas cada 4,5 segundos, botones anterior y siguiente, pausa y navegación con las teclas de dirección. La rotación se detiene al pasar el cursor, enfocar el carrusel, cambiar de pestaña o dejar de verlo; respeta movimiento reducido. Sin JavaScript, las imágenes siguen disponibles mediante desplazamiento horizontal.
+
+La lista permanece vacía hasta incorporar los archivos reales de la autora. No se utilizan diseños de muestra para representar sus trabajos.
 
 ## Abrir ahora
 
